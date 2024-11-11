@@ -41,6 +41,14 @@ int _printf(const char *format, ...)
 					putchar('%');
 					i++;
 					break;
+				case 'd':
+				case 'i':
+				{
+					int nb = va_arg(args, int);
+					putchar(nb);
+					i++;
+					break;
+				}
 				default :
 					putchar(*format);
 					break;
