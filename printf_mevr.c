@@ -30,6 +30,8 @@ int _printf(const char *format, ...)
 				case 's':
 				{
 					char *s = va_arg(args, char *);
+					if (*s == '\0')
+						s = "null";
 					while (*s)
 					{
 						putchar(*(s++));
@@ -44,13 +46,22 @@ int _printf(const char *format, ...)
 				case 'd':
 				case 'i':
 				{
-					int nb = va_arg(args, int);
-					putchar(nb);
-					i++;
+					i += print_nbr(va_arg(args, int));
+					break;
+				}
+				case 'u':
+				{
+					i += print_nbr(va_arg(args, unsigned int));
+					break;
+				}
+				case 'b':
+				{
+					i += binary(va_arg(args,unsigned int));
 					break;
 				}
 				default :
 					putchar(*format);
+					i++;
 					break;
 			}
 		}
