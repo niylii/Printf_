@@ -5,5 +5,7 @@
 #include <stdarg.h>
 
 int _printf(const char *format, ...);
-void binary(unsigned int nb);
+int binary(unsigned int nb);
+int print_nbr(int n);
+int print_uns_nbr(unsigned int n);
 #endif
