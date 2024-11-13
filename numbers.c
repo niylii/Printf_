@@ -74,14 +74,14 @@ int print_nbr(int n)
 int print_uns_nbr(unsigned int n)
 {
 	int count = 0;
-	int div = 1;
+	unsigned int div = 1;
 
 	if (n == 0)
 	{
 		putchar('0');
 		return (1);
 	}
-	while (n / div > 10)
+	while (n / div >= 10)
 	{
 		div *= 10;
 	}
