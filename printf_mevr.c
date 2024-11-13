@@ -51,7 +51,7 @@ int _printf(const char *format, ...)
 				}
 				case 'u':
 				{
-					i += print_nbr(va_arg(args, unsigned int));
+					i += print_uns_nbr(va_arg(args, unsigned int));
 					break;
 				}
 				case 'b':
