@@ -56,7 +56,22 @@ int _printf(const char *format, ...)
 				}
 				case 'b':
 				{
-					i += binary(va_arg(args,unsigned int));
+					i += binary(va_arg(args, unsigned int));
+					break;
+				}
+				case 'o':
+				{
+					i += octal(va_arg(args, int));
+					break;
+				}
+				case 'x':
+				{
+					i += hexa(va_arg(args, int));
+					break;
+				}
+				case 'X':
+				{
+					i += hexaup(va_arg(args, int));
 					break;
 				}
 				default :
