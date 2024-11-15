@@ -5,7 +5,11 @@
 #include <stdarg.h>
 
 int _printf(const char *format, ...);
-int binary(unsigned int nb);
 int print_nbr(int n);
 int print_uns_nbr(unsigned int n);
+int binary(unsigned int nb);
+int octal(unsigned int n);
+int hexa(unsigned int n);
+int hexaup(unsigned int n);
+int non_printable(char *c);
 #endif
