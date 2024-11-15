@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 						s = "null";
 					while (*s)
 					{
-						putchar(*(s++));
+						putchar(*s++);
 						i++;
 					}
 					break;
@@ -61,17 +61,22 @@ int _printf(const char *format, ...)
 				}
 				case 'o':
 				{
-					i += octal(va_arg(args, int));
+					i += octal(va_arg(args, unsigned int));
 					break;
 				}
 				case 'x':
 				{
-					i += hexa(va_arg(args, int));
+					i += hexa(va_arg(args, unsigned int));
 					break;
 				}
 				case 'X':
 				{
-					i += hexaup(va_arg(args, int));
+					i += hexaup(va_arg(args, unsigned int));
+					break;
+				}
+				case 'S':
+				{
+					i += non_printable(va_arg(args, char *));
 					break;
 				}
 				default :
