@@ -2,7 +2,7 @@
 
 | Task Number | Task Description                                      |
 |-------------|------------------------------------------------------|
-| [ ] Task 1  | Handling %c: Character                               |
+| [x] Task 1  | Handling %c: Character                               |
 | [ ] Task 2  | Handling %s: String of characters                   |
 | [ ] Task 3  | Handling %d or %i: Signed decimal integer           |
 | [ ] Task 4  | Handling %b: Unsigned binary                         |
