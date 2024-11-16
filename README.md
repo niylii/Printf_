@@ -8,7 +8,7 @@
 - [x] Case 6: Handling %o: Unsigned octal
 - [x] Case 7: Handling %x: Unsigned hexadecimal integer (lowercase)
 - [x] Case 8: Handling %X: Unsigned hexadecimal integer (uppercase)
-- [ ] Case 9: Handling %S: Custom conversion specifier
+- [x] Case 9: Handling %S: Custom conversion specifier
 - [ ] Case 10: Handling %p: Pointer address
 - [ ] Case 11: Handling %r: Custom conversion specifier, reversed string
 - [ ] Case 12: Handling %R: Custom conversion specifier, Rot13'ed string
