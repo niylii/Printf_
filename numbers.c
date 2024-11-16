@@ -10,23 +10,26 @@ int  binary(unsigned int nb)
 	int bi[32];
 	int i = 0, j;
 	int count = 0;
+	char c;
 
 	if (nb == 0)
 	{
-		putchar('0');
+		write (1, "0", 1);
 		return (1);
 	}
 	while (nb > 0)
 	{
 		bi[i] = nb % 2;
-		nb = nb / 2;
+		nb /= 2;
 		i++;
 	}
 	j = i - 1;
 	while (j >= 0)
 	{
-		putchar(bi[j--] + '0');
+		c = bi[j] + '0';
+		write (1, &c, 1);
 		count++;
+		j--;
 	}
 	return (count);
 }
@@ -40,15 +43,16 @@ int print_nbr(int n)
 {
 	int count = 0;
 	int div = 1;
+	char c;
 
 	if (n == 0)
 	{
-		putchar('0');
+		write (1, "0", 1);
 		return (1);
 	}
 	if (n < 0)
 	{
-		putchar('-');
+		write (1, "-", 1);
 		n = -n;
 		count++;
 	}
@@ -58,7 +62,8 @@ int print_nbr(int n)
 	}
 	while (div > 0)
 	{
-		putchar((n / div) + '0');
+		c = (n / div) + '0';
+		write (1, &c, 1);
 		n %= div;
 		div /= 10;
 		count++;
@@ -75,10 +80,11 @@ int print_uns_nbr(unsigned int n)
 {
 	int count = 0;
 	unsigned int div = 1;
+	char c;
 
 	if (n == 0)
 	{
-		putchar('0');
+		write (1, "0", 1);
 		return (1);
 	}
 	while (n / div >= 10)
@@ -87,7 +93,8 @@ int print_uns_nbr(unsigned int n)
 	}
 	while (div > 0)
 	{
-		putchar((n / div) + '0');
+		c = (n / div) + '0';
+		write (1, &c, 1);
 		n %= div;
 		div /= 10;
 		count++;
@@ -109,7 +116,7 @@ int octal(unsigned int n)
 
 	if (n == 0)
 	{
-		putchar('0');
+		write (1, "0", 1);
 		return (1);
 	}
 	while (n > 0)
@@ -120,8 +127,9 @@ int octal(unsigned int n)
 	j = i - 1;
 	while (j >= 0)
 	{
-		putchar(oc[j--]);
+		write (1, &oc[j], 1);
 		count++;
+		j--;
 	}
 	return (count);
 }
@@ -140,7 +148,7 @@ int hexa(unsigned int n)
 
 	if (n == 0)
 	{
-		putchar('0');
+		write (1, "0", 1);
 		return (1);
 	}
 	while (n > 0)
@@ -155,8 +163,9 @@ int hexa(unsigned int n)
 	j = i - 1;
 	while (j >= 0)
 	{
-		putchar(he[j--]);
+		write (1, &he[j], 1);
 		count++;
+		j--;
 	}
 	return (count);
 }
@@ -176,7 +185,7 @@ int hexaup(unsigned int n)
 
 	if (n == 0)
 	{
-		putchar('0');
+		write (1, "0", 1);
 		return (1);
 	}
 	while (n > 0)
@@ -191,8 +200,9 @@ int hexaup(unsigned int n)
 	j = i - 1;
 	while (j >= 0)
 	{
-		putchar(he[j--]);
+		write (1, &he[j], 1);
 		count++;
+		j--;
 	}
 	return (count);
 }
