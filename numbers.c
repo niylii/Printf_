@@ -3,6 +3,7 @@
 /**
  * binary - a function that converts an unsigned int to binary
  * @nb : the number to convert
+ * Retunr: the lenght
  */
 
 int  binary(unsigned int nb)
@@ -37,6 +38,7 @@ int  binary(unsigned int nb)
 /**
  * print_nbr - function that printd an intiger as a character
  * @nb : the number
+ * Retunr: the lenght
  */
 
 int print_nbr(int n)
@@ -74,6 +76,7 @@ int print_nbr(int n)
 /**
  * print_uns_nbr - function that makes an unsigned intiger as a character
  * @nb : the number
+ * Retunr: the lenght
  */
 
 int print_uns_nbr(unsigned int n)
@@ -105,7 +108,7 @@ int print_uns_nbr(unsigned int n)
 /**
  * octal - function that converts the number to octal
  * @n : the number 
- * Return: the number in octal
+ * Retunr: the lenght
  */
 
 int octal(unsigned int n)
@@ -137,7 +140,7 @@ int octal(unsigned int n)
 /**
  * hexa - function that converts the number to hexadecimal
  * @n : the number 
- * Return: the number in hexadecimal
+ * Retunr: the lenght
  */
 
 int hexa(unsigned int n)
@@ -174,7 +177,7 @@ int hexa(unsigned int n)
 /**
  * hexaup - function that converts the number to hexadecimal(UPPERCASE)
  * @n : the number 
- * Return: the number in hexadecimal
+ * Retunr: the lenght
  */
 
 int hexaup(unsigned int n)
