@@ -3,6 +3,7 @@
 /**
  * binary - a function that converts an unsigned int to binary
  * @nb : the number to convert
+ * Return: the lenght
  */
 
 int  binary(unsigned int nb)
@@ -37,7 +38,7 @@ int  binary(unsigned int nb)
 /**
  * octal - function that converts the number to octal
  * @n : the number 
- * Return: the number in octal
+ * Return: the lenght
  */
 
 int octal(unsigned int n)
@@ -69,7 +70,7 @@ int octal(unsigned int n)
 /**
  * hexa - function that converts the number to hexadecimal
  * @n : the number 
- * Return: the number in hexadecimal
+ * Return: the lenght
  */
 
 int hexa(unsigned int n)
@@ -106,7 +107,7 @@ int hexa(unsigned int n)
 /**
  * hexaup - function that converts the number to hexadecimal(UPPERCASE)
  * @n : the number 
- * Return: the number in hexadecimal
+ * Return: the lenght
  */
 
 int hexaup(unsigned int n)
