@@ -9,7 +9,7 @@
 - [x] Case 7: Handling %x: Unsigned hexadecimal integer (lowercase)
 - [x] Case 8: Handling %X: Unsigned hexadecimal integer (uppercase)
 - [x] Case 9: Handling %S: Custom conversion specifier
-- [ ] Case 10: Handling %p: Pointer address
+- [x] Case 10: Handling %p: Pointer address
 - [ ] Case 11: Handling %r: Custom conversion specifier, reversed string
 - [ ] Case 12: Handling %R: Custom conversion specifier, Rot13'ed string
-- [ ] write instead of putchar fix
+- [x] write instead of putchar fix
