@@ -9,7 +9,7 @@
 
 int _printf(const char *format, ...)
 {
-	int i = 0;
+	int len = 0;
 	va_list args;
 	va_start(args, format);
 
@@ -23,8 +23,8 @@ int _printf(const char *format, ...)
 				case 'c':
 				{
 					int c = va_arg(args, int);
-					putchar(c);
-					i++;
+					write(1, &c, 1);
+					len++;
 					break;
 				}
 				case 's':
@@ -34,64 +34,74 @@ int _printf(const char *format, ...)
 						s = "null";
 					while (*s)
 					{
-						putchar(*s++);
-						i++;
+						write(1, s, 1);
+						s++;
+						len++;
 					}
 					break;
 				}
 				case '%':
-					putchar('%');
-					i++;
+				{
+					write(1, "%", 1);
+					len++;
 					break;
+				}
 				case 'd':
 				case 'i':
 				{
-					i += print_nbr(va_arg(args, int));
+					len += print_nbr(va_arg(args, int));
 					break;
 				}
 				case 'u':
 				{
-					i += print_uns_nbr(va_arg(args, unsigned int));
+					len += print_uns_nbr(va_arg(args, unsigned int));
 					break;
 				}
 				case 'b':
 				{
-					i += binary(va_arg(args, unsigned int));
+					len += binary(va_arg(args, unsigned int));
 					break;
 				}
 				case 'o':
 				{
-					i += octal(va_arg(args, unsigned int));
+					len += octal(va_arg(args, unsigned int));
 					break;
 				}
 				case 'x':
 				{
-					i += hexa(va_arg(args, unsigned int));
+					len += hexa(va_arg(args, unsigned int));
 					break;
 				}
 				case 'X':
 				{
-					i += hexaup(va_arg(args, unsigned int));
+					len += hexaup(va_arg(args, unsigned int));
 					break;
 				}
 				case 'S':
 				{
-					i += non_printable(va_arg(args, char *));
+					len += non_printable(va_arg(args, char *));
+					break;
+				}
+				case 'p':
+				{
+					len += pointer_address(va_arg(args, char *));
 					break;
 				}
 				default :
-					putchar(*format);
-					i++;
+				{
+					write(1, format, 1);
+					len++;
 					break;
+				}
 			}
 		}
 		else
 		{
-			putchar(*format);
-			i++;
+			write(1, format, 1);
+			len++;
 		}
 		format++;
 	}
 	va_end(args);
-	return (i);
+	return (len);
 }
