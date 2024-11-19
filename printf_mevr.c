@@ -84,7 +84,17 @@ int _printf(const char *format, ...)
 				}
 				case 'p':
 				{
-					len += pointer_address(va_arg(args, char *));
+					len += pointer_address(va_arg(args, void *));
+					break;
+				}
+				case 'r':
+				{
+					len += revers(va_arg(args, char *));
+					break;
+				}
+				case 'R':
+				{
+					len += rot13(va_arg(args, char *));
 					break;
 				}
 				default :
