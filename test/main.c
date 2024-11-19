@@ -18,6 +18,7 @@ int main(void)
     len2 = printf("Let's try to printf a simple sentence.\n");
     ui = (unsigned int)INT_MAX + 1024;
     addr = (void *)0x7ffe637541f0;
+    printf("THE NON-CUSTOM CONVERSIONS :\n");
     _printf("Length:[%d, %i]\n", len, len);
     printf("Length:[%d, %i]\n", len2, len2);
     _printf("Negative:[%d]\n", -762534);
@@ -38,6 +39,10 @@ int main(void)
     len2 = printf("Percent:[%%]\n");
     _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
-    _printf("special %S\n", "hello\nworld");
-	return 0;
+    printf("THE CUSTOM CONVERSIONS :\n");
+    _printf("Unsigned binary :[%b]\n", 2);
+    _printf("special character: [%S]\n", "hello\nworld");
+    _printf("Reversed string: [%r]\n", "hello world");   
+    _printf("Rot13'ed string: [%R]\n", "aloha");   
+    return 0;
 }
