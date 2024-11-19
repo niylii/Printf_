@@ -12,5 +12,7 @@ int octal(unsigned int n);
 int hexa(unsigned int n);
 int hexaup(unsigned int n);
 int non_printable(char *c);
-int pointer_address(void *);
+int pointer_address(void *p);
+int revers(char *s);
+int rot13(char *s);
 #endif
