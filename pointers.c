@@ -36,3 +36,48 @@ int pointer_address(void *p)
 	adrs[k] = '\0';
 	return (count);
 }
+
+/**
+ * revers - a function that prints the reversed string
+ * @s : the string
+ * Return: the lenght
+ */
+
+int revers(char *s)
+{
+	int i = 0, j;
+	while (s[i])
+		i++;
+	j = i - 1;
+	while (j >= 0)
+	{
+		write(1, &s[j], 1);
+		j--;
+	}
+	return (i);
+}
+
+/**
+ * rot13 - a function that prints the rot13'ed string
+ * @s : the string
+ * Return: the lenght
+ */
+
+int rot13(char *s)
+{
+	int i = 0;
+
+	if (s == NULL)
+        	return 0;
+	while (s[i])
+	{
+		if (('a' <= s[i] && s[i] <= 'n') || ('A' <= s[i] && s[i] <= 'N'))
+			s[i] = s[i] + 13;
+		else if (('m' <= s[i] && s[i] <= 'z') || ('M' <= s[i] && s[i] <= 'Z'))
+			s[i] = s[i] - 13;
+		write (1, &s[i],1);
+		i++;
+	}
+	s[i] = '\0';
+	return (i);
+}
