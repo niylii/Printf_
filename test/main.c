@@ -43,6 +43,6 @@ int main(void)
     _printf("Unsigned binary :[%b]\n", 2);
     _printf("special character: [%S]\n", "hello\nworld");
     _printf("Reversed string: [%r]\n", "hello world");   
-    _printf("Rot13'ed string: [%R]\n", "aloha");   
+    _printf("Rot13'ed string: [%R]\n", "abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ");   
     return 0;
 }
