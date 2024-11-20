@@ -65,19 +65,23 @@ int revers(char *s)
 
 int rot13(char *s)
 {
-	int i = 0;
-
+	int i = 0; 
+	int k = 0;
+	char rot[1024];
+	
 	if (s == NULL)
-        	return 0;
+        	return (-1);
 	while (s[i])
 	{
-		if (('a' <= s[i] && s[i] <= 'n') || ('A' <= s[i] && s[i] <= 'N'))
-			s[i] = s[i] + 13;
-		else if (('m' <= s[i] && s[i] <= 'z') || ('M' <= s[i] && s[i] <= 'Z'))
-			s[i] = s[i] - 13;
-		write (1, &s[i],1);
+		if (('a' <= s[i] && s[i] <= 'm') || ('A' <= s[i] && s[i] <= 'M'))
+			rot[k++] = s[i] + 13;
+		else if (('n' <= s[i] && s[i] <= 'z') || ('N' <= s[i] && s[i] <= 'Z'))
+			rot[k++] = s[i] - 13;
+		else
+			rot[k++] = s[i];
 		i++;
 	}
-	s[i] = '\0';
-	return (i);
+	rot[k] = '\0';
+	write(1, rot, k);
+	return (k);
 }
