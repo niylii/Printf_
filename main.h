@@ -5,6 +5,9 @@
 #include <stdarg.h>
 
 int _printf(const char *format, ...);
+int prnt_character (char c);
+int prnt_string(char *s);
+int mod(void);
 int print_nbr(int n);
 int print_uns_nbr(unsigned int n);
 int binary(unsigned int nb);
