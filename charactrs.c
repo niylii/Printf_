@@ -1,10 +1,50 @@
 #include "main.h"
 
 /**
+ * prnt_character - a function that prints a character
+ * @c : the character to be printed
+ * Return: the lenght
+ */
+int prnt_character(char c)
+{
+	write (1, &c,1);
+	return (1);
+}
+
+/**
+ * prnt_string - a function that prints a string
+ * @s : the string to be printed
+ * Return: the lenght
+ */
+int prnt_string(char *s)
+{
+	int i = 0;
+
+	if (s == NULL)
+		s = "null";
+	while (*s)
+	{
+		write (1, s, 1);
+		s++;
+		i++;
+	}
+	return (i);
+}
+
+/**
+ * mod - a function that prints literally "%"
+ * Return: the lenght
+ */
+int mod(void)
+{
+	write (1, "%",1);
+	return (1);
+}
+
+/**
  * non_printable - functions that prints the ascii code in hexadecimal of non printable characters
  * @c: the non pritable character
  */
-
 int non_printable(char *c)
 {
 	unsigned int n;
