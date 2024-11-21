@@ -22,28 +22,17 @@ int _printf(const char *format, ...)
 			{
 				case 'c':
 				{
-					int c = va_arg(args, int);
-					write(1, &c, 1);
-					len++;
+					len += prnt_character(va_arg(args, int));
 					break;
 				}
 				case 's':
 				{
-					char *s = va_arg(args, char *);
-					if (*s == '\0')
-						s = "null";
-					while (*s)
-					{
-						write(1, s, 1);
-						s++;
-						len++;
-					}
+					len += prnt_string(va_arg(args, char *));
 					break;
 				}
 				case '%':
 				{
-					write(1, "%", 1);
-					len++;
+					len += mod();
 					break;
 				}
 				case 'd':
