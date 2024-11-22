@@ -5,9 +5,11 @@
  * @c : the character to be printed
  * Return: the lenght
  */
-int prnt_character(char c)
+int prnt_character(va_list args)
 {
-	write (1, &c,1);
+	char c = (char)va_arg(args, int);
+
+	write(1, &c, 1);
 	return (1);
 }
 
@@ -16,15 +18,16 @@ int prnt_character(char c)
  * @s : the string to be printed
  * Return: the lenght
  */
-int prnt_string(char *s)
+int prnt_string(va_list args)
 {
+	char *s = (char *)va_arg(args, char *);
 	int i = 0;
 
 	if (s == NULL)
 		s = "null";
 	while (*s)
 	{
-		write (1, s, 1);
+		write(1, s, 1);
 		s++;
 		i++;
 	}
@@ -35,18 +38,21 @@ int prnt_string(char *s)
  * mod - a function that prints literally "%"
  * Return: the lenght
  */
-int mod(void)
+int mod(va_list args)
 {
-	write (1, "%",1);
+	(void)args;
+	write(1, "%", 1);
 	return (1);
 }
 
 /**
- * non_printable - functions that prints the ascii code in hexadecimal of non printable characters
+ * non_printable - functions that prints the ascii code
+ *	 in hexadecimal of non printable characters
  * @c: the non pritable character
  */
-int non_printable(char *c)
+int non_printable(va_list args)
 {
+	char *c = (char *)va_arg(args, char *);
 	unsigned int n;
 	int i = 0, count = 0;
 	char he[3];
