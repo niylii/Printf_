@@ -5,8 +5,9 @@
  * Return : the lenght
  */
 
-int pointer_address(void *p)
+int pointer_address(va_list args)
 {
+	void *p = va_arg(args, void *);
 	int i = 0, k = 0, j, mod;
 	char adrs[20] = {0}, tmp[20] = {0};
 	int count = 0;
@@ -43,8 +44,9 @@ int pointer_address(void *p)
  * Return: the lenght
  */
 
-int revers(char *s)
+int revers(va_list args)
 {
+	char *s = (char *)va_arg(args, char *);
 	int i = 0, j;
 	while (s[i])
 		i++;
@@ -63,8 +65,9 @@ int revers(char *s)
  * Return: the lenght
  */
 
-int rot13(char *s)
+int rot13(va_list args)
 {
+	char *s = (char *)va_arg(args, char *);
 	int i = 0; 
 	int k = 0;
 	char rot[1024];
