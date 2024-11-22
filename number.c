@@ -6,8 +6,9 @@
  * Return: the lenght
  */
 
-int print_nbr(int n)
+int print_nbr(va_list args)
 {
+	int n = va_arg(args, int);
 	int count = 0;
 	int div = 1;
 	char c;
@@ -44,8 +45,9 @@ int print_nbr(int n)
  * Return: the lenght
  */
 
-int print_uns_nbr(unsigned int n)
+int print_uns_nbr(va_list args)
 {
+	unsigned int n = va_arg(args, unsigned int);
 	int count = 0;
 	unsigned int div = 1;
 	char c;
