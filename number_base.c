@@ -6,8 +6,9 @@
  * Return: the lenght
  */
 
-int  binary(unsigned int nb)
+int  binary(va_list args)
 {
+	unsigned int nb = va_arg(args, unsigned int);
 	int bi[32];
 	int i = 0, j;
 	int count = 0;
@@ -41,8 +42,9 @@ int  binary(unsigned int nb)
  * Return: the lenght
  */
 
-int octal(unsigned int n)
+int octal(va_list args)
 {
+	unsigned int n = va_arg(args, unsigned int);
 	int i = 0, count = 0;
 	int j;
 	char oc[32];
@@ -73,8 +75,9 @@ int octal(unsigned int n)
  * Return: the lenght
  */
 
-int hexa(unsigned int n)
+int hexa(va_list args)
 {
+	unsigned int n = va_arg(args, unsigned int);
 	int i = 0, count = 0;
 	int j, mod;
 	char he[32];
@@ -110,8 +113,9 @@ int hexa(unsigned int n)
  * Return: the lenght
  */
 
-int hexaup(unsigned int n)
+int hexaup(va_list args)
 {
+	unsigned int n = va_arg(args, unsigned int);
 	int i = 0, count = 0;
 	int j, mod;
 	char he[32];
