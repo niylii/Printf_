@@ -1,8 +1,8 @@
 # Printf function:
 
-> This is a custom implementation of the `printf` function in C that supports various format specifiers. 
-> The function writes output directly to the standard output using `write`.
-> The function returns the number of characters printed (similar to the standard printf).
+<blockquote style="color: blue;"> This is a custom implementation of the `printf` function in C that supports various format specifiers. 
+ The function writes output directly to the standard output using `write`.
+The function returns the number of characters printed (similar to the standard printf).</blockquote> 
 
 ## Project File Structure
 
